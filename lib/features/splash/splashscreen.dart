@@ -16,20 +16,23 @@ class SplashScreen extends StatelessWidget{
   }
 
   Widget splashLoadingIcon(){
-    return SizedBox(
-     width: 110.w,
-     height: 110.h,
-      child: Container(
-         decoration: ShapeDecoration(
-             shape: RoundedRectangleBorder(
-               borderRadius: BorderRadiusGeometry.circular(20.0)
-             )
-         ),
-        child: Center(
+    return Container(
+       width : 130.w,
+       height: 110.h,
+       decoration: ShapeDecoration(
+           color: Color(0xFF2E99C7).withRed(100),
+           shape: RoundedRectangleBorder(
+             borderRadius: BorderRadius.circular(200.0)
+           )
+       ),
+      child: Center(
+        child: ColorFiltered(
+          colorFilter: ColorFilter.mode(Colors.white,BlendMode.srcIn),
+
           child: LottieBuilder.asset(
             'assets/animations/splashLoading.json',
-            width: 50.w,
-            height: 37.h,
+            width: 100.w,
+            height: 70.h,
           ),
         ),
       ),
