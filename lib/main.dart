@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return ScreenUtilInit(
-      designSize: const Size(360,690),
+      designSize: Size(size.width,size.height),
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
