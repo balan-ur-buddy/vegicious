@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AboutScreen extends StatelessWidget{
@@ -62,24 +63,26 @@ class AboutScreen extends StatelessWidget{
           ),
         ),
         SizedBox(height: 25.h,),
-        ElevatedButton(
-            onPressed:(){},
-            style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF1F7EA1),
-                foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 15.h),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0.r)
-                )
+        Bounceable(
+          scaleFactor: 0.6,
+          onTap: (){},
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 15.h),
+            decoration : ShapeDecoration(
+                color: const Color(0xFF1F7EA1),
+                shape:RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0.r)
+              )
             ),
-            child: Text(
-              'Shop Now',
-              style: TextStyle(
-                  color : Colors.white,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600
-              ),
-            )
+              child: Text(
+                'Shop Now',
+                style: TextStyle(
+                    color : Colors.white,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600
+                ),
+              )
+          ),
         ),
         const Spacer(),
         Container(
