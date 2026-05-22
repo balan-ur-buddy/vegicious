@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vegicious/config/pagerouter.dart';
 
 class AboutScreen extends StatelessWidget{
   const AboutScreen({super.key});
@@ -106,6 +107,6 @@ class AboutScreen extends StatelessWidget{
 
   }
   void onShopNowTap(BuildContext context){
-   Navigator.of(context).pop();
+   Navigator.pushReplacementNamed(context, PageRouter.login);
   }
 }
