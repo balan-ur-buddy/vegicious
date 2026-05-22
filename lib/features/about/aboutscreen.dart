@@ -11,7 +11,7 @@ class AboutScreen extends StatelessWidget{
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          aboutStackMainContainer(),
+          aboutStackMainContainer(context),
           aboutStackLeafTemplate(300.h, true),
           aboutStackLeafTemplate(330.h, false)
         ],
@@ -31,7 +31,7 @@ class AboutScreen extends StatelessWidget{
     );
   }
 
-  Widget aboutStackMainContainer(){
+  Widget aboutStackMainContainer(BuildContext context){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -64,8 +64,12 @@ class AboutScreen extends StatelessWidget{
         ),
         SizedBox(height: 25.h,),
         Bounceable(
-          scaleFactor: 0.6,
-          onTap: (){},
+          scaleFactor: 0.8,
+          onTap: (){
+            Future.delayed(const Duration(seconds: 1),(){
+              onShopNowTap(context);
+            });
+          },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 15.h),
             decoration : ShapeDecoration(
@@ -99,6 +103,9 @@ class AboutScreen extends StatelessWidget{
 
       ],
     );
-  }
 
+  }
+  void onShopNowTap(BuildContext context){
+   Navigator.of(context).pop();
+  }
 }
