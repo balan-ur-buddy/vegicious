@@ -12,9 +12,9 @@ class AboutScreen extends StatelessWidget{
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          aboutStackMainContainer(context),
           aboutStackLeafTemplate(300.h, true),
-          aboutStackLeafTemplate(330.h, false)
+          aboutStackLeafTemplate(330.h, false),
+          aboutStackMainContainer(context),
         ],
       ),
     );
